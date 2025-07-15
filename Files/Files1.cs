@@ -34,7 +34,7 @@ internal class Files1
         }
     }
 
-    public static void Mainx(string[] args)
+    public static void Run()
     {
         Files1 file = new Files1();
         file.Delete();

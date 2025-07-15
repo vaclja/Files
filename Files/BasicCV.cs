@@ -12,7 +12,7 @@ namespace Files;
         string line = "";
         var number = new List<int>();
         int index = 0;
-        int numberOfHourse, numberOfDays;
+        int numberOfHourse = 0, numberOfDays;
         string path = @"C:\Users\rewit\Downloads\File";
         DirectoryInfo dir = new DirectoryInfo(path);
         if (dir.Exists)
@@ -24,6 +24,11 @@ namespace Files;
                 {
                     line = reader.ReadLine();
                 }
+            }
+            else
+            {
+                Console.WriteLine($"Soubor {file.Name} neexistuje.");
+                return;
             }
             if (line != "" && line != null)
             {
@@ -50,7 +55,14 @@ namespace Files;
                 }
                     if (number != null && number.Count >= 2)
                     {
+                    try
+                    {
                         numberOfHourse = number[1];
+                    }
+                    catch(Exception ex)
+                    {
+                        Console.WriteLine(ex);
+                    }
                         numberOfDays = number[0];
                         Console.WriteLine($"Počet hodin: {numberOfHourse}, Počet dní: {numberOfDays}, celkem je to {(numberOfDays * 24) + numberOfHourse} hodin");
                     }
@@ -63,7 +75,7 @@ namespace Files;
         }
     
             
-        public static void Mainx(string[] args)
+        public static void Run()
         {
             A1FileStr fileStr = new A1FileStr();
             fileStr.readFromFile();

@@ -36,7 +36,7 @@ namespace Files
                 Console.WriteLine(obsah);
             }
         } 
-        public static void Mainx(string[] args)
+        public static void Run()
         {
             FileNotParse fileNotParse = new FileNotParse();
             fileNotParse.FileWithoutParse();
