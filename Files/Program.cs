@@ -11,7 +11,7 @@ namespace Program
     {
         static void Main(string[] args)
         {
-            Files1.Mainx(args);
+            A1FileStr.Mainx(args);
         }
     }
 }
