@@ -36,11 +36,13 @@ internal class Files1
                 }
                 if (File.Exists(fileName))
                 {
-                File.Delete(fileName);
-                Console.WriteLine($"Soubor {fileName} byl smazán.");
-            }
-            else
-            {
+                    File.Delete(fileName);
+                    Console.WriteLine($"Soubor {fileName} byl smazán.");
+                    //FileInfo file = new FileInfo(fileName);
+                    //file.Delete();
+                }
+                else
+                {
                     Console.WriteLine("Soubor neexistuje.");
                 }
             }
