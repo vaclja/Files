@@ -15,6 +15,7 @@ namespace Program
             Console.WriteLine("1 - BasicCV.cs");
             Console.WriteLine("2 - FileNOtParse.cs");
             Console.WriteLine("3 - Files1.cs");
+            Console.WriteLine("4 - A1FileByte.cs");
             string choice = Console.ReadLine();
             switch (choice)
             {
@@ -26,6 +27,9 @@ namespace Program
                     break;
                 case "3":
                     Files1.Run();
+                    break;
+                case "4":
+                    A1FileByte.Run();
                     break;
                 default:
                     Console.WriteLine("Neplatná volba.");
