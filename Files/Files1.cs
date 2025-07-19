@@ -10,6 +10,7 @@ internal class Files1
 {
     public void Delete()
     {
+        string pathSelect = string.Empty;
         string path = @"C:\Users\rewit\Downloads\File";
         DirectoryInfo dir = new DirectoryInfo(path);
         if (dir.Exists)
@@ -24,8 +25,24 @@ internal class Files1
             string fileName = Console.ReadLine();
             if (fileName != null)
             {
+                foreach(FileInfo file in files)
+                {
+                    pathSelect = file.FullName;
+                    if (pathSelect.Contains(fileName))
+                    {
+                        fileName = pathSelect;
+                        break;
+                    }
+                }
+                if (File.Exists(fileName))
+                {
                 File.Delete(fileName);
                 Console.WriteLine($"Soubor {fileName} byl smazán.");
+            }
+            else
+            {
+                    Console.WriteLine("Soubor neexistuje.");
+                }
             }
             else
             {
